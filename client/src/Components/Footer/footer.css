@@ -1,0 +1,161 @@
+.footer {
+    background-color: #222;
+    color: #ccc;
+    padding: 20px 0;
+    text-align: center;
+  }
+  .footer-contact {
+    display: flex;
+    justify-content: space-between;
+    width: 35%;
+    margin-bottom: 20px;
+  }
+  .footer-top {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .footer-contact .contact-item {
+    margin: 0 15px;
+  }
+  
+  .footer-contact .contact-item i {
+    object-fit:inherit;
+    height: 5rem;
+    color: #d14a3b ;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .footer-bottom {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: #1a1a1a;
+  }
+  
+  .footer-column h4 {
+    color: #fff;
+    margin-bottom: 10px;
+  }
+  
+  .footer-column ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .footer-column ul li {
+    margin: 5px 0;
+  }
+  
+  .footer-column ul li a {
+    color: #ccc;
+    text-decoration: none;
+  }
+  
+  .footer-column ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  .subscribe-form {
+    display: flex;
+    margin-bottom: 10px;
+    position: relative;
+  }
+  
+  .email-input {
+    padding: 5px;
+    outline: none;
+    border: none;
+    border-radius: 0 3px 3px 0;
+    height: 3rem;
+    width: 18rem;
+  }
+  
+  .subscribe-button {
+    padding: 5px 10px;
+    position: absolute;
+    right: 0.1rem;
+    background-color: #d14a3b ;
+    border: none;
+    color: #fff;
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
+    height: 3rem;
+  }
+  
+  .footer-copyright {
+    padding: 10px;
+    background-color: #111;
+  }
+  
+  .social-icons a {
+    margin: 0 10px;
+    color: #ccc;
+  }
+  
+  .social-icons a:hover {
+    color: #00aaff;
+  }
+  .email-input {
+    border: none; 
+    outline: none;
+    padding: 5px;
+    border-radius: 3px; 
+  }
+  @media (min-width: 541px) and (max-width:720px){
+   body{
+    background-color: red;
+    width: 100%;
+   }
+   .footer-contact i{
+    /* margin-top: 1rem; */
+    position: relative;
+    top: 1.5rem;
+    
+   }
+   .footer-contact{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3rem;
+   }
+   .footer-top {
+    display: flex;
+    background-color: #00aaff;
+   }
+   .footer-bottom {
+    display: flex;
+    flex-direction: column;
+    background-color: #00aaff;
+   }
+   .subscribe {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+   }
+   .email-input {
+    position: relative;
+    left:10rem;
+   }
+   .subscribe-button {
+    right:10rem;
+   }
+   .footer-copyright {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+   }
+   .footer-copyright p{
+         width: 45%;
+         margin-bottom: 1rem;
+   }
+   .footer {
+    display: flex;
+    flex-direction: column;
+    width:100vh;
+   }
+  }
+ 
