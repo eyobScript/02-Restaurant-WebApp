@@ -361,3 +361,21 @@ export const food_list = [
         category: "Noodles"
     }
 ]
+export const restaurants = [
+    {
+      id: "1",
+      name: "Fidel Restaurant",
+      foods: [food_list[0], food_list[1], food_list[2], food_list[3]],
+    },
+    {
+      id: "2",
+      name: "Ocean Grill",
+      foods: [food_list[4], food_list[5], food_list[6], food_list[7]],
+    },
+    {
+      id: "3",
+      name: "Green Garden",
+      foods: [food_list[20], food_list[21], food_list[22], food_list[23]],
+    },
+  ];
+  
