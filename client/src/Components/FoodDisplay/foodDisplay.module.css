@@ -20,11 +20,14 @@
     justify-content: center;
 }
 .restaurant_option {
-   background-color: rgb(253, 132, 110);
+   background-color: rgb(217, 201, 198);
    width: 15vw;
    height: 3vh;
    border-radius: 5px;
    border: none;
-   outline: 1px solid skyblue;
+   outline: 1px solid rgb(247, 126, 104);
+   text-align: center;
+   font-weight: 15px;
+   
 }
    

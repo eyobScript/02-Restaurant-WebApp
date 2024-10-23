@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useContext } from 'react';
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import { data } from '../../Assets/images/data';
 import classes from './header.module.css';
@@ -6,10 +6,12 @@ import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import XIcon from '@mui/icons-material/X';
+import { StoreContext } from '../../ContextProvider/StoreContext';
+
 
 function Navbar() {
   const [menu, setMenu] = useState('menu');
-
+  const {totalItemsInCart } = useContext(StoreContext);
   const underHandler = (selectedMenu) => {
     setMenu(selectedMenu);
   };
@@ -67,9 +69,9 @@ function Navbar() {
           <a className={classes.media_icon} href="https://www.instagram.com" target="_blank">
             <InstagramIcon />
           </a>
-          <Link className={classes.cart} to="/cart">
+          <Link className={classes.cart} to="../../Pages/Cart/Cart">
             <ShoppingBasketIcon />
-            <li>{0}</li>
+            <li>{totalItemsInCart()}</li>
           </Link>
           <Link to="/signin">
             <button className={classes.nav_btn}>Sign in</button>

@@ -7,16 +7,36 @@ export const StoreContext = createContext(null);
 const StoreContextProvider = (props) => {
   const [cartItems, setCartItems] = useState({});
   const [selectedRestaurant, setSelectedRestaurant] = useState("All");
-
   const AddToCart = (itemId) => {
-    if (!cartItems[itemId]) setCartItems((prev) => ({ ...prev, [itemId]: 1 }));
-    else setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
+    if (!cartItems[itemId]) {
+      setCartItems((prev) => ({ ...prev, [itemId]: 1 }));
+    } else {
+      setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
+    }
   };
 
   const removeFromCart = (itemId) => {
-    setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
+    setCartItems((prev) => {
+      if (prev[itemId] <= 1) {
+        const { [itemId]: _, ...rest } = prev; 
+        return rest;
+      }
+      return { ...prev, [itemId]: prev[itemId] - 1 };
+    });
   };
 
+  const calculateTotal = () => {
+    return Object.keys(cartItems).reduce((total, itemId) => {
+      const foodItem = food_list.find(food => food._id === itemId);
+      if (foodItem) {
+        return total + foodItem.price * cartItems[itemId];
+      }
+      return total;
+    }, 0);
+  };
+  const totalItemsInCart = () => {
+    return Object.values(cartItems).reduce((total, quantity) => total + quantity, 0);
+  };
   const contextValue = {
     food_list,
     restaurants,
@@ -25,6 +45,8 @@ const StoreContextProvider = (props) => {
     setSelectedRestaurant,
     AddToCart,
     removeFromCart,
+    calculateTotal,
+    totalItemsInCart,
   };
 
   return (
