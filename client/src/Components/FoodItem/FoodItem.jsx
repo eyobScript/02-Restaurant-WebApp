@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import classes from './foodItem.module.css'; // Ensure the import path is correct
+import classes from './foodItem.module.css';
 import { assets } from '../../Assets/frontend_assets/assets';
 import { StoreContext } from '../../ContextProvider/StoreContext';
 
@@ -15,9 +15,9 @@ function FoodItem({ id, name, price, description, image }) {
                     !cartItems[id]
                     ?<img className={classes.add} onClick={()=>AddToCart(id)} src={assets.add_icon_white} />
                     :<div className={classes.food_item_counter}> 
-                    <img onClick={() =>removeFromCart(id)} src={assets.remove_icon_red} alt="" />
+                    <img onClick={() =>removeFromCart(id)} src={assets.remove_icon_red} alt="remove icon" />
                     <p>{cartItems[id]}</p>
-                    <img onClick={() =>AddToCart(id)} src={assets.add_icon_green} alt="" />
+                    <img onClick={() =>AddToCart(id)} src={assets.add_icon_green} alt="add icon" />
                     </div>
 
                 }

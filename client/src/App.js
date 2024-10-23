@@ -1,7 +1,7 @@
 // App.jsx
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './Components/Header/Navbar'; // Adjust the path accordingly
+import { BrowserRouter as Router} from 'react-router-dom';
+// import Navbar from './Components/Header/Navbar'; // Adjust the path accordingly
 import Banner from './Components/Header/Banner'; // Your Banner component
 import Footer from './Components/Footer/Footer';
 import Menu from './Components/ExploreMenu/MenuList';
