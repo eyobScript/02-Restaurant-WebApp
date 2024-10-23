@@ -1,5 +1,5 @@
-// src/components/RestaurantSelector.js
 import React, { useContext } from 'react';
+import classes from './foodDisplay.module.css';
 import { StoreContext } from '../../ContextProvider/StoreContext';
 
 function RestaurantSelector() {
@@ -13,8 +13,8 @@ function RestaurantSelector() {
   return (
     <div>
       <h3>Select a Restaurant</h3>
-      <select onChange={handleSelect}>
-        <option value="All">All Restaurants</option>
+      <select className={classes.restaurant_option} onChange={handleSelect}>
+        <option  value="All">All Restaurants</option>
         {restaurants.map((restaurant,index) => (
           <option key={index
           } value={restaurant.id}>

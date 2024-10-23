@@ -2,7 +2,7 @@ import React from 'react';
 import classes from './exploreMenu.module.css'; // Correct import
 import { menu_list } from '../../Assets/frontend_assets/assets';
 
-function ExploreMenu({ category, setCategory }) {
+function ExploreMenu({setCategory }) {
   return (
     <div className={classes.explore_menu}>
       <div className={classes.center_menu_header}>
@@ -14,20 +14,22 @@ function ExploreMenu({ category, setCategory }) {
         </div>
       </div>
       <div className={classes.explore_menu_list}>
-        {Array.isArray(menu_list) && menu_list.map((item) => (
+        {
+        Array.isArray(menu_list) && menu_list.map((item) => (
           <div 
             onClick={() => setCategory(prev => prev === item.menu_name ? 'All' : item.menu_name)} 
             key={item.id}
             className={classes.explore_menu_list_item}
           >
             <img
-              className={`${category === item.menu_name ? classes.active : ''}`} 
+              className={item.menu_name} 
               src={item.menu_image} 
               alt={item.menu_name} 
             />
             <p>{item.menu_name}</p>
           </div>
-        ))}
+        ))
+        }
       </div>
       <hr />
     </div>

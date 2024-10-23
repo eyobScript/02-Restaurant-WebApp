@@ -19,3 +19,12 @@
     display: flex;
     justify-content: center;
 }
+.restaurant_option {
+   background-color: rgb(253, 132, 110);
+   width: 15vw;
+   height: 3vh;
+   border-radius: 5px;
+   border: none;
+   outline: 1px solid skyblue;
+}
+   

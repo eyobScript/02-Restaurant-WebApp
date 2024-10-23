@@ -7,7 +7,7 @@ function MenuList() {
 
   return (
     <div>
-      <ExploreMenu category={category} setCategory={setCategory} />
+      <ExploreMenu setCategory={setCategory} />
       <FoodDisplay category={category}/>
     </div>
   );
