@@ -1,11 +1,10 @@
-import React, { useState,useContext } from 'react';
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+import React, { useState, useContext } from 'react';
+import { Link, NavLink } from 'react-router-dom'; // Import NavLink
 import { data } from '../../Assets/images/data';
 import classes from './header.module.css';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
-import XIcon from '@mui/icons-material/X';
 import { StoreContext } from '../../ContextProvider/StoreContext';
 
 
@@ -17,6 +16,7 @@ function Navbar() {
   };
 
   return (
+    <section className={classes.fixed}>
     <div className={classes.nav_container}>
       <div className={classes.nav_container_left}>
         {/* Use Link for internal navigation */}
@@ -49,17 +49,16 @@ function Navbar() {
             onClick={() => underHandler('menu')}
             className={menu === 'menu' ? classes.active : ''}
           >
-            <Link to="/#menu">Menu</Link>
+            <Link to="/">Menu</Link>
           </li>
           <li
             onClick={() => underHandler('contact')}
             className={menu === 'contact' ? classes.active : ''}
           >
-            <Link to="/#contact">Contact Us</Link>
+            <Link to="/contact">Contact Us</Link>
           </li>
         </ul>
       </div>
-
       <div className={classes.banner_contents_right}>
         <div className={classes.right_inner}>
           {/* For external links, use <a> with valid URLs */}
@@ -69,7 +68,7 @@ function Navbar() {
           <a className={classes.media_icon} href="https://www.instagram.com" target="_blank">
             <InstagramIcon />
           </a>
-          <Link className={classes.cart} to="../../Pages/Cart/Cart">
+          <Link className={classes.cart} to="./cart" >
             <ShoppingBasketIcon />
             <li>{totalItemsInCart()}</li>
           </Link>
@@ -79,7 +78,7 @@ function Navbar() {
         </div>
       </div>
     </div>
-  );
+  </section>);
 }
 
 export default Navbar;

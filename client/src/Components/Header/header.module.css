@@ -8,12 +8,18 @@ h1, h2, h3, .right_inner .nav_btn  {
   font-family: 'Lilita One', cursive;
 }
 
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-
+.fixed {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  
+}
 .right_inner {
   display: flex;
   position: relative;
@@ -87,7 +93,8 @@ h1, h2, h3, .right_inner .nav_btn  {
   justify-content: space-between;
   align-items: center;
   height: 8vh;
-  
+  position:sticky;
+  z-index: 1;
 }
 
 .nav_container ul {
@@ -120,7 +127,7 @@ h1, h2, h3, .right_inner .nav_btn  {
 .nav_btn {
   font-size: 18px;
   padding: 12px 20px;
-  color: #fff;
+  color: #ffffff;
   background-color: #d14a3b;
   border-radius: 5px;
   cursor: pointer;
