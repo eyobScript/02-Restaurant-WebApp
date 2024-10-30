@@ -8,17 +8,20 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import { StoreContext } from '../../ContextProvider/StoreContext';
 
 function Navbar() {
-  const [menu, setMenu] = useState('menu');
+  const [menu, setMenu] = useState('');
   const [bgColor, setBgColor] = useState('transparent');
   const { totalItemsInCart } = useContext(StoreContext);
 
   const underHandler = (selectedMenu) => {
-    setMenu(selectedMenu);
+    setMenu((prev) => {
+      return prev === selectedMenu ? '' : selectedMenu;
+    });
   };
+
 
   useEffect(() => {
     const handleScroll = () => {
-      setBgColor(window.scrollY > 910 ? '#333' : 'transparent'); // Changes color after 50px
+      setBgColor(window.scrollY > 910 ? '#333' : 'transparent'); // Changes color after 910px
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -38,13 +41,10 @@ function Navbar() {
               <Link to="/#home">Home</Link>
             </li>
             <li onClick={() => underHandler('about')} className={menu === 'about' ? classes.active : ''}>
-              <Link to="/#about">About Us</Link>
+              <Link to="/about">About Us</Link>
             </li>
             <li onClick={() => underHandler('services')} className={menu === 'services' ? classes.active : ''}>
-              <Link to="/#services">Services</Link>
-            </li>
-            <li onClick={() => underHandler('menu')} className={menu === 'menu' ? classes.active : ''}>
-              <Link to="/">Menu</Link>
+              <Link to="/services">Services</Link>
             </li>
             <li onClick={() => underHandler('contact')} className={menu === 'contact' ? classes.active : ''}>
               <Link to="/contact">Contact Us</Link>
@@ -53,17 +53,17 @@ function Navbar() {
         </div>
         <div className={classes.banner_contents_right}>
           <div className={classes.right_inner}>
-            <a className={classes.media_icon} href="https://www.facebook.com" target="_blank" >
+            <a onClick={() => underHandler('')} className={classes.media_icon} href="https://www.facebook.com" target="_blank" rel="noreferrer">
               <FacebookIcon />
             </a>
-            <a className={classes.media_icon} href="https://www.instagram.com" target="_blank">
+            <a onClick={() => underHandler('')} className={classes.media_icon} href="https://www.instagram.com" target="_blank" rel="noreferrer" >
               <InstagramIcon />
             </a>
-            <Link  onClick={() => underHandler('')} className={classes.cart} to="./cart">
+            <Link onClick={() => underHandler('')} className={classes.cart} to="./cart">
               <ShoppingBasketIcon />
               <li>{totalItemsInCart()}</li>
             </Link>
-            <Link to="/signin">
+            <Link onClick={() => underHandler('')} to="/signin">
               <button className={classes.nav_btn}>Sign in</button>
             </Link>
           </div>

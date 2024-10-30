@@ -3,7 +3,7 @@ import { data } from '../../Assets/images/data';
 import classes from './header.module.css';
 import Navbar from './Navbar'; // Import the Navbar component
 
-function Banner() {
+function Banner(props) {
   return (
     <>
       <div

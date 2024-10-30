@@ -5,7 +5,7 @@ import FoodItem from '../FoodItem/FoodItem';
 import RestaurantSelector from './RestaurantSelector';
 
 function FoodDisplay({ category }) {
-    const { food_list, selectedRestaurant } = useContext(StoreContext);
+    const { food_list, selectedRestaurant} = useContext(StoreContext);
 
     // Filter the food items based on selected restaurant and category
     const filteredFoods = food_list.filter(food => {
@@ -17,13 +17,13 @@ function FoodDisplay({ category }) {
     return (
         <div className={classes.food_container}>
             <div className={classes.food_display}>
-                <h2>Top Dishes Near You</h2>
+                <h2 >Top Dishes Near You</h2> 
                 <RestaurantSelector />
                 <div className={classes.food_display_list}>
                     {filteredFoods.length > 0 ? (
-                        filteredFoods.map((food,index ) => (
+                        filteredFoods.map((food) => (
                             <FoodItem
-                                key={index}
+                                key={food._id} 
                                 id={food._id}
                                 description={food.description}
                                 name={food.name}
