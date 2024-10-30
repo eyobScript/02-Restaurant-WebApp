@@ -21,7 +21,7 @@ function Banner() {
 
         <div className={classes.banner_contents}>
           <div className={classes.grid_banner}>
-            <h1 className={classes.title}>Fidel Restaurant</h1>
+            <h1 className={classes.title}>Our Restaurant</h1>
             <p className={classes.animated_sentence}>
               "Welcome to Fidel Restaurant,
               where delicious flavors meet joyful gatherings,

@@ -4,7 +4,8 @@ import { assets } from '../../Assets/frontend_assets/assets';
 import { StoreContext } from '../../ContextProvider/StoreContext';
 
 function FoodItem({ id, name, price, description, image }) {
-    const {cartItems, AddToCart, removeFromCart} = useContext(StoreContext)
+    const {cartItems, AddToCart, removeFromCart} = useContext(StoreContext);
+
     return (
     
         
@@ -13,9 +14,9 @@ function FoodItem({ id, name, price, description, image }) {
                 <img className={classes.food_item_image} src={image} alt={name} />
                 {
                     !cartItems[id]
-                    ?<img className={classes.add} onClick={()=>AddToCart(id)} src={assets.add_icon_white} />
+                    ?<img className={classes.add} onClick={()=>AddToCart(id)} src={assets.add_icon_white} alt="add icon"/>
                     :<div className={classes.food_item_counter}> 
-                    <img onClick={() =>removeFromCart(id)} src={assets.remove_icon_red} alt="remove icon" />
+                    <img onClick={() =>removeFromCart(id,"homeName")} src={assets.remove_icon_red} alt="remove icon" />
                     <p>{cartItems[id]}</p>
                     <img onClick={() =>AddToCart(id)} src={assets.add_icon_green} alt="add icon" />
                     </div>

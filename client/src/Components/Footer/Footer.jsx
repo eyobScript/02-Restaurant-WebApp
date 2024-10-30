@@ -72,7 +72,7 @@ function Footer() {
       </div>
 
       <div className="footer-copyright">
-        <p>&copy; 2024 All rights reserved. | This template is made with <i className="fa fa-heart"></i> by <a href="https://colorlib.com" target="_blank" rel="noreferrer">Colorlib.com</a></p>
+        <p>&copy; 2024 All rights reserved. | This template is made by <a href="https://t.me/eyobscript" target="_blank" rel="website developer is eyob">@eyobScript</a></p>
         {/* <div className="social-icons">
           <a href="#"><i className="fa fa-facebook"></i></a>
           <a href="#"><i className="fa fa-twitter"></i></a>

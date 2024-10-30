@@ -1,4 +1,3 @@
-// src/ContextProvider/StoreContext.js
 import { createContext, useState } from 'react';
 import { food_list, restaurants } from '../Assets/frontend_assets/assets';
 
@@ -15,16 +14,20 @@ const StoreContextProvider = (props) => {
     }
   };
 
-  const removeFromCart = (itemId) => {
+  const removeFromCart = (itemId, name) => {
     setCartItems((prev) => {
-      if (prev[itemId] <= 1) {
-        const { [itemId]: _, ...rest } = prev; 
+      const itemCount = prev[itemId];
+      
+      if (name === "cartName" || itemCount <= 1) {
+        // Completely remove the item
+        const { [itemId]: _, ...rest } = prev;
         return rest;
       }
-      return { ...prev, [itemId]: prev[itemId] - 1 };
+      
+      // Decrease the item count
+      return { ...prev, [itemId]: itemCount - 1 };
     });
   };
-
   const calculateTotal = () => {
     return Object.keys(cartItems).reduce((total, itemId) => {
       const foodItem = food_list.find(food => food._id === itemId);

@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import classes from './foodDisplay.module.css';
 import { StoreContext } from '../../ContextProvider/StoreContext';
+import RestaurantIcon from '@mui/icons-material/Restaurant';
 
 function RestaurantSelector() {
   const { restaurants, setSelectedRestaurant } = useContext(StoreContext);
@@ -12,9 +13,12 @@ function RestaurantSelector() {
 
   return (
     <div>
-      <h3>Select a Restaurant</h3>
+      <h3>Select a Restaurant <RestaurantIcon /></h3>
+      
       <select className={classes.restaurant_option} onChange={handleSelect}>
-        <option  value="All">All Restaurants</option>
+        <option  value="All">
+           All Restaurants
+          </option>
         {restaurants.map((restaurant,index) => (
           <option key={index
           } value={restaurant.id}>
